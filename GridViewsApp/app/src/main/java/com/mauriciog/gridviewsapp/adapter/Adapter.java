@@ -51,7 +51,7 @@ public class Adapter extends BaseAdapter {
         }
 
         nombreEquipo=(TextView)item.findViewById (R.id.tvEquipo);
-        escudo=(TextView)item.findViewById (R.id.imgEscudo);
+        escudo=(ImageView) item.findViewById (R.id.imgEscudo);
         nombreEquipo.setText (equipo[position]);
         escudo.setImageResource (imagen[position]);
         return item;
