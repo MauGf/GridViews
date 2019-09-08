@@ -16,7 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView (R.layout.activity_details);
 
         final Toolbar toolbar = findViewById (R.id.toolbar);
-        toolbar.setTitle (R.string.app_name);
+        toolbar.setTitle ("Detalle");
         setSupportActionBar (toolbar);
         if (getSupportActionBar () != null) {
             getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
@@ -26,5 +26,14 @@ public class DetailsActivity extends AppCompatActivity {
         TextView descripcion= (TextView)findViewById (R.id.tvDescripcion);
         ImageView imagen=(ImageView)findViewById (R.id.imgDetalle);
 
+        String detalle;
+        int img;
+
+        Bundle b= getIntent().getExtras ();
+        detalle=b.getString ("descripcion");
+        img=b.getInt ("imagen");
+
+        descripcion.setText (detalle);
+        imagen.setImageResource (img);
     }
 }
