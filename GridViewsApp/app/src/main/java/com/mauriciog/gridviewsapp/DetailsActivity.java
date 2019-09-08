@@ -1,8 +1,12 @@
 package com.mauriciog.gridviewsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -10,5 +14,17 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_details);
+
+        final Toolbar toolbar = findViewById (R.id.toolbar);
+        toolbar.setTitle (R.string.app_name);
+        setSupportActionBar (toolbar);
+        if (getSupportActionBar () != null) {
+            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
+            getSupportActionBar ().setDisplayShowHomeEnabled (true);
+        }
+
+        TextView descripcion= (TextView)findViewById (R.id.tvDescripcion);
+        ImageView imagen=(ImageView)findViewById (R.id.imgDetalle);
+
     }
 }
